@@ -80,8 +80,8 @@
 		var bluescreen = document.getElementById('bluescreen'),
   // isInIFrame = (window.location != window.parent.location) ? true : false;
   isInIFrame = window.location.href.indexOf('s.codepen.io/eky/fullpage/') >= 0 ? true : false;
-  fullscreen = document.getElementById('fullscreen'),
-  isFs = false,
+  fullscreen = document.getElementById('fullscreen');
+  isFs = false;
   notSupportFullscreenAPI = !fullscreen.webkitRequestFullScreen && !fullscreen.mozRequestFullScreen && !fullscreen.requestFullScreen;
 
 // Outdated stuff
