@@ -1,0 +1,163 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Breakout</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src=""https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="/chs.js"></script>
+        <script>
+            var NUM_ROWS = 8;
+var BRICK_TOP_OFFSET = 10;
+var BRICK_SPACING = 2;
+var NUM_BRICKS_PER_ROW = 10;
+var BRICK_HEIGHT = 10;
+var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
+var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
+var count = 0;
+var color = Color.RED;
+var xPos = 0 + BRICK_SPACING;
+var yPos = 0 + BRICK_TOP_OFFSET;
+var numBricks = 0;
+/* Constants for ball and paddle */
+var PADDLE_WIDTH = 80;
+var PADDLE_HEIGHT = 15;
+var PADDLE_OFFSET = 10;
+var ball;
+var dx = 10;
+var dy = 10;
+var BALL_RADIUS = 15;
+var paddle = new Rectangle(PADDLE_WIDTH, PADDLE_HEIGHT);
+var BALL_RADIUS = 15;
+
+var win = 0;
+
+
+function start(){
+	for(var i = 0; i < 8; i++){
+         xPos = BRICK_SPACING;
+         brick();
+         yPos += BRICK_SPACING + BRICK_HEIGHT;
+         
+         if(i > 0 && i < 2){
+             color = Color.ORANGE;
+         }else if(i > 2 && i < 4){
+             color = Color.GREEN;
+         }else if(i > 4 && i < 6){
+             color = Color.BLUE;
+         }
+         
+    }
+    
+    ball = new Circle(BALL_RADIUS);
+	ball.setPosition(100, 140);
+	add(ball);
+	setTimer(draw, 20);
+	add(paddle);
+	mouseMoveMethod(paddleMov);
+
+}
+
+function brick(){
+   for(var i = 0; i < NUM_BRICKS_PER_ROW; i++){
+    var brick = new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+    brick.setColor(color);
+    brick.setPosition(xPos, yPos);
+    add(brick);
+    xPos += BRICK_WIDTH + BRICK_SPACING;
+    count++;
+    numBricks++;
+    println(numBricks);
+    }
+}
+
+function draw(){
+	checkWalls();
+	ball.move(dx, dy);
+	collision();
+
+}
+
+function checkWalls(){
+	// Bounce off right wall
+	if(ball.getX() + ball.getRadius() > getWidth()){
+		dx = -dx;
+	}
+	
+	// Bounce off left wall
+	if(ball.getX() - ball.getRadius() < 0){
+		dx = -dx;
+	}
+	
+	// Bounce off bottom wall
+	if(ball.getY() + ball.getRadius() > getHeight()){
+	    stopTimer(draw);
+		println("You lose!");
+		dy = -dy;
+	}
+	
+	// Bounce off top wall
+	if(ball.getY() - ball.getRadius() < 0){
+		dy = -dy;
+	}
+}
+
+function paddleMov(e){
+   paddle.setPosition(e.getX(), getHeight() - (PADDLE_OFFSET + PADDLE_HEIGHT));
+    
+}
+
+function collision(){
+    var ballAt = getElementAt(ball.getX(), ball.getY() + ball.getRadius());
+    
+	if(ballAt !== null){
+       if(ballAt === paddle){
+		    dy = -dy;
+        }else{
+            dy = -dy;
+            remove(ballAt);
+            numBricks--;
+            println(numBricks);
+        }
+    }
+    var ballAt = getElementAt(ball.getX(), ball.getY() - ball.getRadius());
+    if(ballAt !== null){
+       if(ballAt === paddle){
+		    dy = -dy;
+		    
+        }else{
+            dy = -dy;
+            remove(ballAt);
+            numBricks--;
+            println(numBricks);
+        }
+    }
+    if(numBricks === win){
+        stopTimer(draw);
+       println("You Win");
+        }
+}
+
+        </script>
+        <style>
+            canvas{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="canvasContainer" width=100%" style="width: 100%; height: 100%; overflow: hidden;">
+            <canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
+        </div>
+        <script>
+            window.onload=function(){
+                if(typeof start=== 'function'){
+                    start();
+                }
+            };
+        </script>
+    </body>
+</html>
