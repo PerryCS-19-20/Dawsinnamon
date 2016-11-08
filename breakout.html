@@ -113,8 +113,8 @@ function paddleMov(e){
 function collision(){
     var ballAt = getElementAt(ball.getX(), ball.getY() + ball.getRadius());
     
-	if(ballAt != null){
-       if(ballAt == paddle){
+	if(ballAt !== null){
+       if(ballAt === paddle){
 		    dy = -dy;
         }else{
             dy = -dy;
@@ -124,8 +124,8 @@ function collision(){
         }
     }
     var ballAt = getElementAt(ball.getX(), ball.getY() - ball.getRadius());
-    if(ballAt != null){
-       if(ballAt == paddle){
+    if(ballAt !== null){
+       if(ballAt === paddle){
 		    dy = -dy;
 		    
         }else{
@@ -135,7 +135,7 @@ function collision(){
             println(numBricks);
         }
     }
-    if(numBricks == win){
+    if(numBricks === win){
         stopTimer(draw);
        println("You Win");
         }
