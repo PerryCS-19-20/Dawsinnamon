@@ -6,9 +6,26 @@ and open the template in the editor.
 <html>
     <head>
         <title>Make a list</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #listInput{  
+             text-align: left;
+            }
+        </style>
     </head>
     <body>
+        <table border="4" align="center">
+            <tr>
+                <th><a href="index.html">Home</a> </th>
+                <th><a href="bio.html">About this dude!</a></th>
+                <th><a href="Fun-Games.html"> Fun games</a></th>
+                <th><a href="popup.html"> motivation</a></th>
+                <th><a href="background-change.html">word color scramble</a></th>
+                <th><a href="htmlTest.html">the test</a></th>
+                <th><a href="todolist.html">To Do List</a></th>
+            </tr>
+        </table>
         <textarea rows="10" cols="90" id="inputText">Input job you overworked person</textarea>
         <button onclick="toDoList();">
             Add to list
@@ -16,11 +33,11 @@ and open the template in the editor.
         <ul id="listInput">
         </ul>
         <script>
-            function createToDoList(){
+            function toDoList(){
                 var listItems = document.getElementById("inputText");
                 var ulList = document.getElementById("listInput");
                 var list = document.createElement("li");
-                list.textContent = document.listItems.value;
+                list.textContent = listItems.value;
                 ulList.appendChild(list);
             }
         </script>
