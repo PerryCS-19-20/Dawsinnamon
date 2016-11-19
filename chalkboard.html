@@ -29,12 +29,12 @@ and open the template in the editor.
         </ol>
         <script>
             function toDoList(){
-                for(var i=o; i < 100; i++){
+                for(var i=0; i < 100; i++){
                     var listItems = document.getElementById("inputText");
-                    var ulList = document.getElementById("listInput");
+                    var olList = document.getElementById("listInput");
                     var list = document.createElement("li");
                     list.textContent = "I will not " + listItems.value;
-                    ulList.appendChild(list);
+                    olList.appendChild(list);
                 }
             }
         </script>
