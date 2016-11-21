@@ -42,11 +42,11 @@ and open the template in the editor.
                 var clicked = document.getElementById(cell);
                 if(clicked.textContent==""){
                     clicked.textContent= player;
-                }
-                if(player=="X"){
-                    player = "O";
-                }else{
-                    player = "X";
+                    if(player=="X"){
+                        player = "O";
+                    }else{
+                        player = "X";
+                    }
                 }
             }
         </script>
