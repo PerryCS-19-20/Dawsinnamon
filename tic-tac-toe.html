@@ -21,14 +21,14 @@ and open the template in the editor.
     <body>
         <table border="1">
             <tr>
-                <td class="resetting" id="1" onclick="play('1');"></td>
-                <td class="resetting" id="2" onclick="play('2');"></td>
-                <td class="resetting" id="3" onclick="play('3');"></td>
+                <td id="1" onclick="play('1');"></td>
+                <td id="2" onclick="play('2');"></td>
+                <td id="3" onclick="play('3');"></td>
             </tr>
             <tr>
-                <td class="resetting" id="4" onclick="play('4');"></td>
-                <td class="resetting" id="5" onclick="play('5');"></td>
-                <td class="resetting" id="6" onclick="play('6');"></td>
+                <td id="4" onclick="play('4');"></td>
+                <td id="5" onclick="play('5');"></td>
+                <td id="6" onclick="play('6');"></td>
             </tr>
             <tr>
                 <td class="resetting" id="7" onclick="play('7');"></td>
@@ -42,14 +42,30 @@ and open the template in the editor.
         <p id="winCondition"></p>
         <script>
         function reset(){
-            var justReset = document.getElementByClass(resetting);
-            justReset.textContent = "";
+            var one = document.getElementById("1");
+            var two = document.getElementById("2");
+            var three = document.getElementById("3");
+            var four = document.getElementById("4");
+            var five = document.getElementById("5");
+            var six = document.getElementById("6");
+            var seven = document.getElementById("7");
+            var eight = document.getElementById("8");
+            var nine = document.getElementById("9");
+            one.textContent = "";
+            two.textContent = "";
+            three.textContent = "";
+            four.textContent = "";
+            five.textContent = "";
+            six.textContent = "";
+            seven.textContent = "";
+            eight.textContent = "";
+            nine.textContent = "";
+            
         }
         
             var player = "X";
             function play(cell){
                 var clicked = document.getElementById(cell);
-                var checkWin = false;
                 if(clicked.textContent===""){
                     clicked.textContent= player;
                     if(player==="X"){
@@ -57,7 +73,7 @@ and open the template in the editor.
                     }else{
                         player = "X";
                     }
-                    checkWin(win);
+                    var win = checkWin(win);
                     if(checkWin === true){
                         var winCon = getElementById(winCondition);
                         winCon.textContent = "You Won";
