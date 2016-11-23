@@ -31,9 +31,9 @@ and open the template in the editor.
                 <td id="6" onclick="play('6');"></td>
             </tr>
             <tr>
-                <td class="resetting" id="7" onclick="play('7');"></td>
-                <td class="resetting" id="8" onclick="play('8');"></td>
-                <td class="resetting" id="9" onclick="play('9');"></td>
+                <td id="7" onclick="play('7');"></td>
+                <td id="8" onclick="play('8');"></td>
+                <td id="9" onclick="play('9');"></td>
             </tr>
         </table>
         <button onclick="justReset();">
@@ -41,7 +41,7 @@ and open the template in the editor.
         </button>
         <p id="winCondition"></p>
         <script>
-        function reset(){
+        function justReset(){
             var one = document.getElementById("1");
             var two = document.getElementById("2");
             var three = document.getElementById("3");
@@ -74,7 +74,7 @@ and open the template in the editor.
                         player = "X";
                     }
                     var win = checkWin(win);
-                    if(checkWin === true){
+                    if(true){
                         var winCon = getElementById(winCondition);
                         winCon.textContent = "You Won";
                     }
