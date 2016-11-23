@@ -16,6 +16,9 @@ and open the template in the editor.
                 text-align: center;
                 border-collapse: collapse;
             }
+            #winCondition{
+                font-size: 200px;
+            }
         </style>
     </head>
     <body>
@@ -60,23 +63,24 @@ and open the template in the editor.
             seven.textContent = "";
             eight.textContent = "";
             nine.textContent = "";
-            
+            var winCon = document.getElementById('winCondition');
+            winCon.textContent = "";
         }
         
             var player = "X";
             function play(cell){
                 var clicked = document.getElementById(cell);
+                var winCon = document.getElementById('winCondition');
                 if(clicked.textContent===""){
                     clicked.textContent= player;
+                    var win = checkWin();
+                    if(win === true){
+                        winCon.textContent = "Win!";
+                    }
                     if(player==="X"){
                         player = "O";
                     }else{
                         player = "X";
-                    }
-                    var win = checkWin(win);
-                    if(true){
-                        var winCon = getElementById(winCondition);
-                        winCon.textContent = "You Won";
                     }
                 }
             }
