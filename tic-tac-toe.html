@@ -19,10 +19,16 @@ and open the template in the editor.
             #winCondition{
                 font-size: 200px;
             }
+            @font-face{
+                font-family:'Geholiday';
+                src: url('https://perryma.tk/se/Geholiday.ttf')format('truetype');
+                font-weight: normal;
+                font-style: normal;
+
         </style>
     </head>
     <body>
-        <table border="1">
+        <table border="1" style="font-familt:'Geholiday'">
             <tr>
                 <td id="1" onclick="play('1');"></td>
                 <td id="2" onclick="play('2');"></td>
@@ -43,6 +49,49 @@ and open the template in the editor.
             Reset
         </button>
         <p id="winCondition"></p>
+        <script src="https://perryma.tk/se/Geholiday.js">
+            function getLetter(player){
+                var day = holiday();
+                if(day === "Christmas"){
+                    if(player === "X"){
+                    return "p";
+                    }else if(player === "O"){
+                        return "o";
+                    }
+                    
+                }else if(day === "Thanksgiving"){
+                    if(player === "X"){
+                    return "n";
+                    }else if(player === "O"){
+                        return "m";
+                    }
+                }else if(day === "Valentines"){
+                    if(player === "X"){
+                    return "c";
+                    }else if(player === "O"){
+                        return "a";
+                    }
+                }else if(day === "Halloween"){
+                    if(player === "X"){
+                    return "j";
+                    }else if(player === "O"){
+                        return "i";
+                    }
+                }else if(day === "4th of July"){
+                    if(player === "X"){
+                    return "g";
+                    }else if(player === "O"){
+                        return "h";
+                    }
+                }else if(day === "Easter"){
+                    if(player === "X"){
+                    return "d";
+                    }else if(player === "O"){
+                        return "e";
+                    }
+                }
+            }
+        </script>
         <script>
         function justReset(){
             var one = document.getElementById("1");
