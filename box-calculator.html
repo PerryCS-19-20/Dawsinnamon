@@ -23,13 +23,12 @@ and open the template in the editor.
                 var timesTable = document.createElement("table");
                 timesTable.id = "timesTable";
                 
-                
+                var tRow = document.createElement("th");
+                var tCol = document.createElement("th");
                 for(var i = 0; i < 10; i++){
-                    var row = document.createElement("th");
-                    row++;
+                    tRow.textContent("i");
                     for(var j = 0; j < 10; j++){
-                        var col = document.createElement("th");
-                        col++;
+                        tCol.textConent("j");
                     }
                 }
                 // Add the table to the document's body
