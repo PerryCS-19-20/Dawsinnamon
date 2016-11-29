@@ -7,6 +7,17 @@ and open the template in the editor.
     <head>
         <title>Times Table Size</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            table, td, th{
+                border: solid 1px;
+            }
+            td {
+                text-align: right;
+            }
+            #bordering{
+                border: "4";
+            }
+        </style>
     </head>
     <body onload="buildTimesTable();">
 
@@ -19,7 +30,7 @@ and open the template in the editor.
             function buildTimesTable() {
                 // Remove the multiplication table if it already exists.
                 var timesTable = document.getElementById("timesTable");
-                if (timesTable != null) {
+                if (timesTable !== null) {
                     timesTable.parentNode.removeChild(timesTable);        
                 }
 
