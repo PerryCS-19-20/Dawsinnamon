@@ -28,7 +28,9 @@ and open the template in the editor.
                 for(var i = 0; i < 10; i++){
                     tRow.textContent("i");
                     for(var j = 0; j < 10; j++){
-                        tCol.textConent("j");
+                        var tHead = document.createElement("th");
+                        var tBody = document.createElement("td");
+                        tCol.textContent = j;
                     }
                 }
                 // Add the table to the document's body
