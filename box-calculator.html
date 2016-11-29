@@ -1,0 +1,44 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiplication-Table</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            table, td, th{
+                border: solid 1px;
+            }
+            td {
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body onload="buildTimesTable()">
+        <script>
+            function buildTimesTable() {
+                // Create a table for the multiplication table
+                var timesTable = document.createElement("table");
+                timesTable.id = "timesTable";
+                
+                
+                for(var i = 0; i < 10; i++){
+                    var row = document.createElement("th");
+                    row++;
+                    for(var j = 0; j < 10; j++){
+                        var col = document.createElement("th");
+                        col++;
+                    }
+                }
+                // Add the table to the document's body
+                var body = document.body;
+                body.appendChild(timesTable);
+                
+                // Fill in the multiplication table
+            }
+        </script>
+        
+    </body>
+</html>
