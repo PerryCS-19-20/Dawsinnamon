@@ -1,0 +1,69 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Times Table Size</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body onload="buildTimesTable();">
+
+
+        <h1>Multiplication Table</h1>
+        Table Width:<input type="range" id="tableWidth" min="1" max="20" value="10" onchange ="buildTimesTable();"><br>
+
+
+        <script>
+            function buildTimesTable() {
+                // Remove the multiplication table if it already exists.
+                var timesTable = document.getElementById("timesTable");
+                if (timesTable != null) {
+                    timesTable.parentNode.removeChild(timesTable);        
+                }
+
+
+                // Create a table for the multiplication table
+                timesTable = document.createElement("table");
+                timesTable.id = "timesTable";            
+                
+                // Add the table to the document's body
+                var body = document.body;
+                body.appendChild(timesTable);
+                
+                // Get the table width and height
+                var width = document.getElementById("tableWidth").value;
+
+
+                // Fill in the multiplication table
+                for(var i = 0; i < 11; i++){
+                    var tRow = document.createElement("tr");
+                    timesTable.appendChild(tRow);
+                    for(var j = 0; j < 11; j++){
+                        var tHead = document.createElement("th");
+                        var tBody = document.createElement("td");
+                        if( i < 1){
+                            if(j === 0){
+                                tHead.textContent = "";
+                            }else{
+                                tHead.textContent = j;
+                            }
+                            tRow.appendChild(tHead);
+                        }else{
+                            
+                            tHead.textContent = i;
+                            tBody.textContent = i * j;
+                            if(j >= 1){
+                                tRow.appendChild(tBody);
+                            }else{
+                                tRow.appendChild(tHead);
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+
+</html>
