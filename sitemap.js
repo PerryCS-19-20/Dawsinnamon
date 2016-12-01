@@ -6,22 +6,21 @@
 function buildMap(elementId){
     var theMap = document.getElementById(elementId);
     var list = document.createElement("ul");
-    var listItems = document.createElement("li");
-    var home = document.createElement("a");
-    var bio = document.createElement("a");
-    var classProjects = document.createElement("a");
-    var breakout = document.createElement("a");
-    var javaScriptEvents = document.createElement("a");
-    var popUp = document.createElement("a");
-    var toDoList = document.createElement("a");
-    var chalkBoard = document.createElement("a");
-    var ticTacToe = document.createElement("a");
-    var multiplication = document.createElement("a");
-    var moreMult = document.createElement("a");
+    var sublist = document.createElement("ul");
+    var classProjects = document.createElement("li");
+    classProjects.textContent = "classProjects";
     
-    home.href = "index.html";
+    
+    
+    list.appendChild(buildList("Home", "index.html"));
+    theMap.appendChild(list);
 }
 
-function buildList(){
-    
+function buildList(title, link){
+    var element = document.createElement("a");
+    var li = document.createElement("li");
+    element.href = link;
+    element.textContent = title;
+    li.appendChild(Element);
+    return(li);
 }
