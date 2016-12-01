@@ -23,7 +23,8 @@ and open the template in the editor.
 
 
         <h1>Multiplication Table</h1>
-        Table Width:<input type="range" id="tableWidth" min="1" max="20" value="10" onchange ="buildTimesTable();"><br>
+        Table Width:<input type="range" id="tableWidth" min="11" max="101" value="10" onchange ="buildTimesTable();"><br>
+        Table Height:<input type="range" id="tableHeight" min="11" max="101" value="10" onchange ="buildTimesTable();"><br>
 
 
         <script>
@@ -32,6 +33,11 @@ and open the template in the editor.
                 var timesTable = document.getElementById("timesTable");
                 if (timesTable !== null) {
                     timesTable.parentNode.removeChild(timesTable);        
+                }
+                
+                var timesTableH = document.getElementById("timesTable");
+                if(timesTableH !== null){
+                    timesTableH.parentNode.removeChild(timesTable);
                 }
 
 
@@ -45,13 +51,14 @@ and open the template in the editor.
                 
                 // Get the table width and height
                 var width = document.getElementById("tableWidth").value;
+                var height = document.getElementById("tableHeight").value;
 
 
                 // Fill in the multiplication table
-                for(var i = 0; i < 11; i++){
+                for(var i = 0; i < width; i++){
                     var tRow = document.createElement("tr");
                     timesTable.appendChild(tRow);
-                    for(var j = 0; j < 11; j++){
+                    for(var j = 0; j < height; j++){
                         var tHead = document.createElement("th");
                         var tBody = document.createElement("td");
                         if( i < 1){
