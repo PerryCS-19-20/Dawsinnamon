@@ -1,0 +1,28 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Pythagorean Theorem</title>
+        <style>
+            input[type=number]{
+                width: 64px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function calc(){
+                var a = parseFloat(document.getElementById("baseA").value);
+                var b = parseFloat(document.getElementById("baseB").value);
+                var c = parseFloat(document.getElementById("hypotenuse").value);
+                c.value = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)).toFoxed(2);
+            }
+        </script>
+        <h1>Pythagorean Theorem</h1>
+    </body>
+</html>
