@@ -43,6 +43,9 @@ function buildMap(elementId){
     sublist.appendChild(buildList("More Multiplication Table", "multTable-change.html"));
     classProjects.appendChild(sublist);
     
+    sublist.appendChild(buildList("Pythagorean Calculator", "calculator.html"));
+    classProjects.appendChild(sublist);
+    
     
 }
 
