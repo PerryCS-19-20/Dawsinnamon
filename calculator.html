@@ -19,12 +19,20 @@ and open the template in the editor.
             function calc(){
                 var a = parseFloat(document.getElementById("baseA").value);
                 var b = parseFloat(document.getElementById("baseB").value);
-                var c = parseFloat(document.getElementById("hypotenuse").value);
-                c.value = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)).toFoxed(2);
+                var c = document.getElementById("hypotenuse");
+                c.value = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)).toFixed(2);
             }
         </script>
+        
+        
         <h1>Pythagorean Theorem</h1>
-        <img src="Pythagorean-Theorem.jpg" style="float: left; height: 150px; margin-right: 5px;">
-        <h2>a <sup>2</sup> + b <sup>2</sup> = c <sup>2</sup></h2>
+        <img src="Hippopotamus.jpg" style="float: left; height: 150px; margin-right: 5px;">
+        <h2>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></h2>
+        
+        a: <input type="number" id="baseA" placeholder="aVal"><br>
+        b: <input type="number" id="baseB" placeholder="bVal">
+        <button onclick="calc();">Calculate</button>
+        <hr>
+        c: <input type="output" id="hypotenuse" placeholder="hypotenuse" readonly>
     </body>
 </html>
