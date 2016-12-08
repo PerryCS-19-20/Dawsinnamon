@@ -1,0 +1,88 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Calendar</title>
+        <style>
+            table, td, th{
+                border: solid 1px;
+            }
+            td {
+                text-align: right;
+            }
+            #bordering{
+                border: "4";
+            }
+        </style>
+    </head>
+    <body onload="makeCalendar();">
+        <script>
+            function makeCalendar() {
+                var calendar = document.createElement("table");
+                calendar.id = "calendar";
+                
+                var body = document.body;
+                body.appendChild(calendar);
+                var tRow = document.createElement("tr");
+                    calendar.appendChild(tRow);
+                    var month = 11;
+                    var year = 2016;
+                for(var i = 0; i < (38 + getFirstDay(month, year)); i++){
+                    if(i % 7 === 0){
+                        tRow = document.createElement("tr");
+                        calendar.appendChild(tRow);
+                    }
+                    if(i < 7){
+                        var tHead = document.createElement("th");
+                        tHead.textContent = getDayName(i);
+                        tRow.appendChild(tHead);
+                    }else {
+                        var tBody = document.createElement("td");
+                        tBody.textContent = i - 7;
+                        tRow.appendChild(tBody);
+                        
+                    }
+                }
+            }
+            
+            function getDayName(dayNum){
+                switch(dayNum){
+                    case 0:
+                        return "Sunday";
+                    case 1:
+                        return "Monday";
+                    case 2:
+                        return "Tuesday";
+                    case 3:
+                        return "Wednesday";
+                    case 4:
+                        return "Thursday";
+                    case 5:
+                        return "Friday";
+                    case 6:
+                        return "Saturday";
+                }
+            }
+            
+            function getFirstDay(month, year) {
+                var date = new Date(year, month, 1);
+                return date.getDay();
+            }
+              function getNumDays(month, year) {
+                var date = new Date(year, month+1, 0);
+                return date.getDate();
+            }
+              function getNumDays(month, year) {
+                var date = new Date(year, month+1, 0);
+                return date.getDate();
+            }
+
+        </script>
+    </body>
+</html>
