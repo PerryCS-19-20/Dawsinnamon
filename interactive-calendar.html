@@ -22,8 +22,10 @@ and open the template in the editor.
         </style>
     </head>
     <body onload="makeCalendar();">
+        <h1 id="getMonth">December 2016</h1>
         <script>
             function makeCalendar() {
+                
                 var calendar = document.createElement("table");
                 calendar.id = "calendar";
                 
@@ -33,7 +35,8 @@ and open the template in the editor.
                     calendar.appendChild(tRow);
                     var month = 11;
                     var year = 2016;
-                for(var i = 0; i < (38 + getFirstDay(month, year)); i++){
+                    var numdays = getNumDays(month, year) + getFirstDay(month, year) + 7;
+                for(var i = 0; i < (numdays); i++){
                     if(i % 7 === 0){
                         tRow = document.createElement("tr");
                         calendar.appendChild(tRow);
@@ -44,8 +47,13 @@ and open the template in the editor.
                         tRow.appendChild(tHead);
                     }else {
                         var tBody = document.createElement("td");
-                        tBody.textContent = i - 7;
-                        tRow.appendChild(tBody);
+                        if(i > (6 + getFirstDay(month, year))){
+                            tBody.textContent = i - (6 + getFirstDay(month, year));
+                            tRow.appendChild(tBody);
+                        }else{
+                            tBody.textContent = "";
+                            tRow.appendChild(tBody);
+                        }
                         
                     }
                 }
@@ -77,12 +85,7 @@ and open the template in the editor.
               function getNumDays(month, year) {
                 var date = new Date(year, month+1, 0);
                 return date.getDate();
-            }
-              function getNumDays(month, year) {
-                var date = new Date(year, month+1, 0);
-                return date.getDate();
-            }
-
+              }
         </script>
     </body>
 </html>
