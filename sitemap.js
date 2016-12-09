@@ -46,6 +46,9 @@ function buildMap(elementId){
     sublist.appendChild(buildList("Pythagorean Calculator", "calculator.html"));
     classProjects.appendChild(sublist);
     
+    sublist.appendChild(buildList("Interactive Calendar", "interactive-calendar.html"));
+    classProjects.appendChild(sublist);
+    
     
 }
 
