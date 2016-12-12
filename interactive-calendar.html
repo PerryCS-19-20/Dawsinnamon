@@ -23,7 +23,7 @@ and open the template in the editor.
         </style>
     </head>
     <body onload="makeCalendar();">
-        <h1 id="getMonth">December 2016</h1>
+        <h1 id="getMonthName"> </h1>
         <script>
             function makeCalendar() {
                 
@@ -87,6 +87,36 @@ and open the template in the editor.
                 var date = new Date(year, month+1, 0);
                 return date.getDate();
               }
+              function getMonthName(month) {
+                switch(month) {
+                case 0:
+                    return "January";
+                case 1:
+                    return "February";
+                case 2:
+                    return "March";
+                case 3:
+                    return "April";
+                case 4:
+                    return "May";
+                case 5:
+                    return "June";
+                case 6:
+                    return "July";
+                case 7:
+                    return "August";
+                case 8:
+                    return "September";
+                case 9:
+                    return "October";
+                case 10:
+                    return "Novenber";
+                case 11:
+                    return "December";
+
+                }
+            }
+
         </script>
     </body>
 </html>
