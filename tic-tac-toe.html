@@ -26,8 +26,11 @@ and open the template in the editor.
                 font-style: normal;
 
         </style>
+        <script src="sitemap.js"></script>
+        <link rel="stylesheet" type="text/css" href="menubar.css">
     </head>
-    <body>
+    <body onload="buildMap('menubar');">
+        <div id="menubar"></div>
         <table border="1" style="font-familt:'Geholiday'">
             <tr>
                 <td id="1" onclick="play('1');"></td>
