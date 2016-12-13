@@ -13,8 +13,12 @@ and open the template in the editor.
                 width: 64px;
             }
         </style>
+        <script src="sitemap.js"></script>
+         <link rel="stylesheet" type="text/css" href="menubar.css">
+         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body onload="buildMap('menubar');">
+        <div id="menubar"></div>
         <script>
             function calc(){
                 var a = parseFloat(document.getElementById("baseA").value);

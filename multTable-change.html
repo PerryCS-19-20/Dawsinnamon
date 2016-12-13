@@ -20,21 +20,12 @@ and open the template in the editor.
            
         </style>
          <link rel="stylesheet" type="text/css" href="style.css">
+         <script src="sitemap.js"></script>
+         <link rel="stylesheet" type="text/css" href="menubar.css">
     </head>
-    <body onload="buildTimesTable();">
-        <table border="4" align="center">
-            <tr>
-                <th><a href="index.html">Home</a> </th>
-                <th><a href="bio.html">About this dude!</a></th>
-                <th><a href="Fun-Games.html"> Fun games</a></th>
-                <th><a href="popup.html"> motivation</a></th>
-                <th><a href="background-change.html">word color scramble</a></th>
-                <th><a href="htmlTest.html">the test</a></th>
-                <th><a href="todolist.html">To Do List</a></th>
-                <th><a href="chalkboard.html">Chalkboard</a></th>
-                <th><a href="box-calculator.html">Times Table</a></th>
-            </tr>
-        </table>
+    <body onload="buildMap('menubar'); buildTimesTable();">
+        <div id="menubar"></div>
+        
 
 
         <h1>Multiplication Table</h1>

@@ -21,8 +21,11 @@ and open the template in the editor.
                 border: "4";
             }
         </style>
+        <script src="sitemap.js"></script>
+        <link rel="stylesheet" type="text/css" href="menubar.css">
     </head>
-    <body onload="makeCalendar();">
+    <body onload="buildMap('menubar'); makeCalendar();">
+        <div id="menubar"></div>
         <h1 id="getMonth"> </h1>
         <script>
             function makeCalendar() {
