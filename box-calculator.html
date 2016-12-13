@@ -23,20 +23,8 @@ and open the template in the editor.
             }
         </style>
     </head>
-    <body onload="buildMap('menubar');" onload="buildTimesTable();">
-        <table border="4" align="center" class="bordering">
-            <tr>
-                <th><a href="index.html">Home</a> </th>
-                <th><a href="bio.html">About this dude!</a></th>
-                <th><a href="Fun-Games.html"> Fun games</a></th>
-                <th><a href="popup.html"> motivation</a></th>
-                <th><a href="background-change.html">word color scramble</a></th>
-                <th><a href="htmlTest.html">the test</a></th>
-                <th><a href="todolist.html">To Do List</a></th>
-                <th><a href="chalkboard.html">Chalkboard</a></th>
-                <th><a href="box-calculator.html">Times Table</a></th>
-            </tr>
-        </table>
+    <body onload="buildMap('menubar'); buildTimesTable();">
+        <div id="menubar"></div>
         <script>
             function buildTimesTable() {
                 // Create a table for the multiplication table
