@@ -8,8 +8,11 @@
             alert("Due on friday? Do on friday!");
         </script>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="sitemap.js"></script>
+        <link rel="stylesheet" type="text/css" href="menubar.css">
     </head>
-    <body>
+    <body onload="buildMap('menubar');">
+        <div id="menubar"></div>
         <table border="4" align="center">
             <tr>
                 <th><a href="index.html">Home</a> </th>

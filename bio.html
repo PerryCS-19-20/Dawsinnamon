@@ -11,8 +11,11 @@
     <link rel="shortcut icon" href="/Dawsinnamon/favicon.ico">
     <meta name="msapplication-config" content="/Dawsinnamon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <script src="sitemap.js"></script>
+    <link rel="stylesheet" type="text/css" href="menubar.css">
    </head>
-   <body>
+   <body onload="buildMap('menubar');">
+       <div id="menubar"></div>
     <table border="4" align="center">
         <tr>
            <th><a href="index.html">Home</a> </th>

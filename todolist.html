@@ -8,8 +8,11 @@ and open the template in the editor.
         <title>Make a list</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="sitemap.js"></script>
+        <link rel="stylesheet" type="text/css" href="menubar.css">
     </head>
-    <body>
+    <body onload="buildMap('menubar');">
+        <div id="menubar"></div>
         <table border="4" align="center">
             <tr>
                 <th><a href="index.html">Home</a> </th>
