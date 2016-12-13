@@ -13,7 +13,8 @@ root {
         position: relative;
         padding: 0px;
 	display: block;
-background-color: grey;
+background-color: black;
+color: white;
 }
 
 
@@ -44,7 +45,7 @@ text-indent: 0px;
 #menubar ul ul {
 	display: none;
 	position: absolute;
-background-color: lightgrey;
+background-color: black;
 padding: 0px;
 }
 
@@ -60,7 +61,7 @@ padding: 0px;
 /* Make menu links look normal */
 #menubar a {
 	display: block;
-color: black;
+color: white;
 	padding: 8px;
 	text-decoration: none;
 }
@@ -68,7 +69,7 @@ color: black;
 
 /* Change the link color on hover */
 #menubar ul ul li a:hover {
-	background-color: grey;
-	color: white;
+	background-color: white;
+	color: black;
 }
 
